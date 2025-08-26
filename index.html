@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Circuit & Flux Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-logo">
+            <i class="fas fa-atom"></i>
+        </div>
+        <div class="splash-text">Physics Circuit & Flux Quiz</div>
+        <div class="splash-progress">
+            <div class="splash-progress-bar" id="splash-progress"></div>
+        </div>
+        <div class="splash-loading-text">Loading interactive questions...</div>
+    </div>
+    
+    <!-- Main Quiz Content -->
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-atom"></i> Physics Quiz</h1>
+            <div class="stats">
+                <div class="stat-box"><i class="fas fa-star"></i> Score: <span id="score">0</span></div>
+                <div class="stat-box"><i class="fas fa-question-circle"></i> <span id="question-number">1</span>/<span id="total-questions">15</span></div>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-text">
+                <span>Progress</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question-type" id="question-type">Click</div>
+            <p class="question-text" id="question">Question will appear here</p>
+            
+            <!-- Click Area -->
+            <div class="click-area" id="click-area">
+                <div class="click-count">Clicks: <span id="click-count">0</span></div>
+                <div class="click-controls">
+                    <div class="click-box decrement-box" id="decrement-box">
+                        <div class="click-effect" id="decrement-effect"></div>
+                        <i class="fas fa-minus"></i>
+                    </div>
+                    <div class="click-box increment-box" id="increment-box">
+                        <div class="click-effect" id="increment-effect"></div>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <p>Click the boxes to increase or decrease the count</p>
+            </div>
+            
+            <!-- Multiple Choice Options -->
+            <div class="options-container" id="options-container">
+                <!-- Options will be generated here -->
+            </div>
+            
+            <!-- Slider Area -->
+            <div class="slider-container" id="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-value">Value: <span id="slider-value">50</span></div>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="answer-slider">
+                </div>
+            </div>
+            
+            <!-- Component Selection Area -->
+            <div class="components-container" id="components-container">
+                <!-- Components will be generated here -->
+            </div>
+            
+            <!-- Memory Card Game Area -->
+            <div class="memory-game-container" id="memory-game-container">
+                <button class="start-memory-btn" id="start-memory-btn"><i class="fas fa-play"></i> Start Memorizing</button>
+                <div class="timer">Time remaining: <span id="time-remaining">10</span>s</div>
+                <div class="memory-cards" id="memory-cards">
+                    <!-- Memory cards will be generated here -->
+                </div>
+            </div>
+            
+            <!-- Pacman Game Area -->
+            <div class="pacman-game-container" id="pacman-game-container">
+                <div class="game-grid" id="game-grid">
+                    <!-- Game grid will be generated here -->
+                </div>
+                <div class="pacman-answers" id="pacman-answers">
+                    <!-- Answer labels will be generated here -->
+                </div>
+                <p>Use W, A, S, D keys to move the character to the correct answer</p>
+            </div>
+            
+            <!-- Drag and Drop Area -->
+            <div class="drag-drop-container" id="drag-drop-container">
+                <div class="drag-items" id="drag-items">
+                    <!-- Draggable items will be generated here -->
+                </div>
+                <div class="drop-targets" id="drop-targets">
+                    <!-- Drop targets will be generated here -->
+                </div>
+            </div>
+            
+            <!-- Wordle Game Area -->
+            <div class="wordle-container" id="wordle-container">
+                <div class="wordle-guesses" id="wordle-guesses">
+                    <!-- Wordle guesses will be generated here -->
+                </div>
+                <div class="wordle-input-container">
+                    <input type="text" class="wordle-input" id="wordle-input" maxlength="5" placeholder="Enter 5-letter word">
+                </div>
+                <p>Guess the physics-related word. You have 4 attempts.</p>
+            </div>
+            
+            <!-- Hangman Game Area -->
+            <div class="hangman-container" id="hangman-container">
+                <div class="hangman-figure">
+                    <div class="hangman-drawing">
+                        <!-- Gallows -->
+                        <div class="hangman-part hangman-base"></div>
+                        <div class="hangman-part hangman-pole"></div>
+                        <div class="hangman-part hangman-top"></div>
+                        <div class="hangman-part hangman-rope"></div>
+                        
+                        <!-- Man -->
+                        <div class="hangman-part hangman-head"></div>
+                        <div class="hangman-part hangman-body"></div>
+                        <div class="hangman-part hangman-left-arm"></div>
+                        <div class="hangman-part hangman-right-arm"></div>
+                        <div class="hangman-part hangman-left-leg"></div>
+                        <div class="hangman-part hangman-right-leg"></div>
+                    </div>
+                </div>
+                <div class="hangman-word" id="hangman-word">
+                    <!-- Hangman word will be generated here -->
+                </div>
+                <div class="hangman-keyboard" id="hangman-keyboard">
+                    <!-- Hangman keyboard will be generated here -->
+                </div>
+                <p>Guess the physics-related word. You have 6 incorrect attempts allowed.</p>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-reset" id="reset-btn"><i class="fas fa-redo"></i> Reset All</button>
+            <button class="btn" id="submit-btn"><i class="fas fa-check-circle"></i> Submit</button>
+            <button class="btn btn-next" id="next-btn"><i class="fas fa-arrow-right"></i> Next</button>
+        </div>
+        
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
