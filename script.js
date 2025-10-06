@@ -55,7 +55,7 @@ let questions = [
         answers: [
             { x: 5, y: 3, value: "V = IR", correct: true },
             { x: 2, y: 6, value: "P = IV", correct: false },
-            { x: 7, y: 2, value: "I = V/R", correct: false }
+            { x: 7, y: 2, value: "C = Q / V", correct: false }
         ],
         obstacles: [
             { x: 2, y: 1 }, { x: 3, y: 1 }, { x: 4, y: 1 },
